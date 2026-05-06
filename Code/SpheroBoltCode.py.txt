@@ -1,17 +1,16 @@
 # Programers: Cole Rowe & Ty Robicheaux
-# Shero Bolt ID: 
+# Shero Bolt ID: EC76
 # Date: 5.4.2026
 # Program: Sandbox Training
 
 
 async def startProgram():
     await speak("Hello World", True)
-    set_main_led({'r': 0, 'g': 0, 'b': 255})
-    set_speed(60)
-    await delay(2)
+    set_main_led({'r': 0, 'g': 255, 'b': 0})
+    set_speed(70)
+    await delay(3)
     set_speed(0)
 
 
 
 
-    
