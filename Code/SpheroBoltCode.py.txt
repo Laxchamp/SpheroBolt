@@ -18,8 +18,8 @@ async def startProgram():
     await delay(1)
     for _i1 in range(4):
         set_main_led(get_random_color())
-        await Sound.Game.Coin.play(True)
-        await roll((get_heading() + 90), 60, 1)
-        await delay(1)
+        await Sound.Game.Coin.play(False)
+        await roll((get_heading() + 80), 70, 1)
+        await delay(2)
 
 
