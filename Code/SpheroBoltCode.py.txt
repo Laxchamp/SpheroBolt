@@ -1,5 +1,5 @@
 # Programers: Cole Rowe & Ty Robicheaux
-# Shero Bolt ID: EC76
+# Sphero Bolt ID: EC76
 # Date: 5.4.2026
 # Program: Sandbox Training
 
@@ -16,10 +16,12 @@ async def startProgram():
     set_main_led({'r': 0, 'g': 0, 'b': 255})
     await speak("Hello Square", True)
     await delay(1)
+
     for _i1 in range(4):
         set_main_led(get_random_color())
         await Sound.Effects.Chime.play(False)
-        await roll((get_heading() + 80), 70, 1)
-        await delay(2)
+        await roll((get_heading() + 90), 70, 1)
+        await delay(1)
 
-
+    await speak("Finished", True)
+    set_main_led({'r': 0, 'g': 255, 'b': 0})
