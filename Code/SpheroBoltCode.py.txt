@@ -4,9 +4,16 @@
 # Program: Sandbox Training Extended
 
 async def startProgram():
+        #C1 - Purple
     await roll(0, 50, 3)
     
     set_main_led({ 'r': 239, 'g': 0, 'b': 255 })
     await delay(3)
     
     set_speed(0)     # Stop
+      
+      #C2 - Green
+    await roll(90, 30, 3)
+
+    set_main_led({ 'r': 0, 'g': 250, 'b': 0 })
+    await delay(3)
