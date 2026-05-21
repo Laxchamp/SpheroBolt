@@ -17,3 +17,8 @@ async def startProgram():
 
     set_main_led({ 'r': 0, 'g': 250, 'b': 0 })
     await delay(3)
+
+    #C - Music
+    await roll((get_heading()+ 90), 60, 3)
+    await roll((get_heading()+ 30), 70, 2)
+    await Sound.EightBit.Boss.play(False)
