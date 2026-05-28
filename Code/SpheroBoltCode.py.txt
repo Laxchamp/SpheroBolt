@@ -3,6 +3,7 @@
 # Date: 5.4.2026
 # Program: Sandbox Training Extended
 
+
 register_matrix_animation({
 
     'frames': [
@@ -91,7 +92,7 @@ register_matrix_animation({
 
 })
 
-async def start_program():
+    async def start_program():
     
         #C1 - Purple
     await roll(0, 50, 3)
@@ -117,3 +118,69 @@ async def start_program():
     await roll((get_heading()- 80), 10, 2)
     await roll((get_heading()- 95), 25, 3)
     play_matrix_animation(0, True)
+
+
+    async def startProgram():
+    await speak("Hello World", True)
+    set_main_led({'r': 0, 'g': 255, 'b': 0})
+    set_speed(70)
+    await delay(3)
+    set_speed(0)
+
+
+    async def startProgram():
+    # Starting sequence
+    set_main_led({'r': 0, 'g': 0, 'b': 255})
+    await speak("Hello Square", True)
+    await delay(1)
+
+    # Original square code
+    for _i1 in range(4):
+        set_main_led(get_random_color())
+        await Sound.Effects.Chime.play(False)
+        await roll((get_heading() + 90), 70, 1)
+        await delay(1)
+
+    # Countdown
+    await speak("3", True)
+    await delay(0.5)
+    await speak("2", True)
+    await delay(0.5)
+    await speak("1", True)
+    await delay(0.5)
+    await speak("Go!", True)
+
+    # Speed burst forward
+    set_main_led({'r': 255, 'g': 0, 'b': 0})
+    await roll(get_heading(), 120, 2)
+
+    # Spin in place effect
+    for _i2 in range(8):
+        set_main_led(get_random_color())
+        set_heading(get_heading() + 45)
+        await Sound.Effects.Tada.play(False)
+        await delay(0.2)
+
+    # Zigzag movement
+    for _i3 in range(3):
+        set_main_led({'r': 255, 'g': 255, 'b': 0})
+        await roll((get_heading() + 45), 90, 1)
+        
+        set_main_led({'r': 0, 'g': 255, 'b': 255})
+        await roll((get_heading() - 90), 90, 1)
+
+    # Circle-ish movement
+    for _i4 in range(12):
+        set_main_led(get_random_color())
+        await roll((get_heading() + 30), 80, 0.4)
+
+    # Ending celebration
+    await speak("Finished", True)
+
+    for _i5 in range(6):
+        set_main_led(get_random_color())
+        await Sound.Effects.Celebrate.play(False)
+        await delay(0.3)
+
+    set_main_led({'r': 0, 'g': 255, 'b': 0})
+
